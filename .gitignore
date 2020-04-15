@@ -5,7 +5,6 @@ cmake-build-debug/
 
 cmake_install.cmake
 
-appveyor.yml
 CMakeFIles/
 
 compile_commands.json
@@ -27,7 +26,5 @@ myproject.cbp
 Makefile
 
 graph_info.json
-
-LICENSE
 
 CTestTestfile.cmake
