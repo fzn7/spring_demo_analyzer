@@ -3,8 +3,6 @@
 .vagrant/
 cmake-build-debug/
 
-cmake/
-
 cmake_install.cmake
 
 appveyor.yml
@@ -33,5 +31,3 @@ graph_info.json
 LICENSE
 
 CTestTestfile.cmake
-
-*.cmake

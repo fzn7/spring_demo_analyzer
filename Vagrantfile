@@ -6,11 +6,19 @@
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 Vagrant.configure("2") do |config|
+
+  config.vm.define "spring" do |spring|
+    spring.vm.box = "debian/jessie64"
+  end
+
+  config.vm.define "spring_demo_analyzer" do |spring_demo_analyzer|
+    spring_demo_analyzer.vm.box = "debian/buster64"
+  end
+
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
 
-  ENV['VAGRANT_DEFAULT_PROVIDER'] = 'docker'
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
   # config.vm.box = "debian/jessie64"
@@ -47,17 +55,7 @@ Vagrant.configure("2") do |config|
   # config.vm.synced_folder "../data", "/vagrant_data"
     config.vm.synced_folder "../spring", "/spring", type: "rsync"
 
-  # Provider-specific configuration so you can fine-tune various
-  # backing providers for Vagrant. These expose provider-specific options.
-  # Example for VirtualBox:
-  #
-  config.vm.provider "docker" do |d|
-    #d.build_dir = "."
-    d.image = "debian/jessie"
-    d.remains_running = true
-    #d.has_ssh = true
-  end
-
+  config.ssh.password = "vagrant"
   #
   # View the documentation for the provider you are using for more
   # information on available options.

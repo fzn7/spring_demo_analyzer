@@ -1,0 +1,8 @@
+sudo apt-get install build-essential zlib1g-dev libfreetype6-dev cmake \
+libsdl2-dev libopenal-dev libglew-dev zip libvorbis-dev libxcursor-dev \
+libdevil-dev libboost-system1.55-dev libboost-thread1.55-dev \
+libboost-regex1.55-dev libboost-serialization1.55-dev \
+libboost-program-options1.55-dev libboost-chrono1.55-dev \
+libunwind-dev  libboost-filesystem1.55-dev \
+libboost-signals1.55-dev libboost-test1.55-dev \
+xsltproc libfontconfig1-dev libcurl4-openssl-deve
