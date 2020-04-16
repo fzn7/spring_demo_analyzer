@@ -9,10 +9,24 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "spring" do |spring|
     spring.vm.box = "debian/jessie64"
+
+    spring.vm.provider "virtualbox" do |vb|
+      vb.cpus = "6"
+    end
+
+    spring.ssh.password = "vagrant"
   end
 
   config.vm.define "spring_demo_analyzer" do |spring_demo_analyzer|
     spring_demo_analyzer.vm.box = "debian/buster64"
+
+    spring_demo_analyzer.vm.provider "virtualbox" do |vb|
+      vb.cpus = "6"
+
+    end
+
+    spring_demo_analyzer.vm.synced_folder "../spring", "/vagrant", automount: true
+    spring_demo_analyzer.ssh.password = "vagrant"
   end
 
   # The most common configuration options are documented and commented below.
@@ -53,9 +67,9 @@ Vagrant.configure("2") do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
-    config.vm.synced_folder "../spring", "/spring", type: "rsync"
+  #config.vm.synced_folder "../spring", "/spring", automount: true
 
-  config.ssh.password = "vagrant"
+  #config.ssh.password = "vagrant"
   #
   # View the documentation for the provider you are using for more
   # information on available options.
